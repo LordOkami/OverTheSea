@@ -35,8 +35,7 @@ public class LighthouseRotation : MonoBehaviour {
             
 
             Vector3 dir = (nextLightTarget - currentLightTarget);
-
-            float speed = 0.1F;
+            
             Vector3 partialDestination = currentLightTarget + ((Vector3.Magnitude(dir)<1)?dir: (Vector3.Normalize(dir)));
 
             //Debug.DrawRay(currentLightTarget, Vector3.Min(Vector3.Normalize(dir), dir), Color.red, 1);
