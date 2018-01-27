@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 85194970}
   - component: {fileID: 85194969}
   - component: {fileID: 85194968}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: WaterPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570

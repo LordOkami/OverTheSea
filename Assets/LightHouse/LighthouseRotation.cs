@@ -14,9 +14,8 @@ public class LighthouseRotation : MonoBehaviour {
         Ray lightRay = new Ray(transform.position, transform.rotation * Vector3.forward);
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-
-        Debug.DrawRay(transform.position, transform.rotation * Vector3.forward*1000, Color.blue, 2);
-        Debug.DrawRay(cameraRay.origin,cameraRay.direction*1000,Color.yellow,2);
+        //Debug.DrawRay(transform.position, transform.rotation * Vector3.forward*1000, Color.blue, 2);
+        //Debug.DrawRay(cameraRay.origin,cameraRay.direction*1000,Color.yellow,2);
 
         // create a plane at 0,0,0 whose normal points to +Y:
         Plane hPlane = new Plane(Vector3.up, Vector3.zero);
@@ -40,10 +39,13 @@ public class LighthouseRotation : MonoBehaviour {
             float speed = 0.1F;
             Vector3 partialDestination = currentLightTarget + ((Vector3.Magnitude(dir)<1)?dir: (Vector3.Normalize(dir)));
 
-            Debug.DrawRay(currentLightTarget, Vector3.Min(Vector3.Normalize(dir), dir), Color.red, 1);
+            //Debug.DrawRay(currentLightTarget, Vector3.Min(Vector3.Normalize(dir), dir), Color.red, 1);
 
 
             // Vector3 partialDestination = currentLightTarget + ((nextLightTarget - currentLightTarget) *2);
+            
+
+
             transform.LookAt(partialDestination);
 
         }
