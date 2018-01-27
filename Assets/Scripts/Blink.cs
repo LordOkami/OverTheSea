@@ -9,6 +9,7 @@ public class Blink : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
        light = this.GetComponent<Light>();
+        light.intensity = Random.Range(0, 2);
 
     }
 
