@@ -1,0 +1,22 @@
+<<<<<<< HEAD:Assets/Materials.meta
+fileFormatVersion: 2
+guid: d5e5466a171980f4aa5b156678e565fc
+folderAsset: yes
+timeCreated: 1517089134
+licenseType: Free
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: da0956ae305b4438b8269230334ecf27
+timeCreated: 1517088395
+licenseType: Free
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> master:Assets/LightHouse/BoatsCollision.unity.meta
