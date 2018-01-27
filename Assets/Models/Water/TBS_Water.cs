@@ -36,7 +36,7 @@ namespace TornadoBanditsStudio.LowPolyFreePack
 	 
 	        for(int i=0; i < baseHeight.Length; i++) 
 			{
-	            perVertexRandoms.Add(Random.value * randomHeight);
+	            perVertexRandoms.Add(Random.value * Random.Range(0, randomHeight));
 	        }
 	    }
 	   
