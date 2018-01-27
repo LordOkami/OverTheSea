@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RockCollision : MonoBehaviour {
 
-    GameObject explosion;
+    public GameObject explosion;
  
     void Start()
     {
-        explosion = GameObject.Find("Explosion");
     }
 
     // Update is called once per frame
