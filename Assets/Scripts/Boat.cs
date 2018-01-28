@@ -33,9 +33,9 @@ public class Boat : MonoBehaviour {
 		boat.GetComponent<Rigidbody>().AddForce(speed * normalized);
 
 		Vector3 newDir = Vector3.RotateTowards(boat.forward, normalized, 1, 0.0F);
-		// Debug.DrawRay(transform.position, newDir*3, Color.red,2);
-		// Debug.DrawRay(transform.position, transform.forward*3, Color.blue,2);
-		// Debug.DrawRay(transform.position, transform.right*-3, Color.green,2);
+		// Debug.DrawRay(boat.position, newDir*3, Color.red,2);
+		// Debug.DrawRay(boat.position, boat.forward*3, Color.blue,2);
+		// Debug.DrawRay(boat.position, boat.right*-3, Color.green,2);
 		boat.rotation = Quaternion.Lerp( boat.rotation, Quaternion.LookRotation(newDir), Time.time * rotationSpeed );
 	}
 
