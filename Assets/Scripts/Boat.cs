@@ -11,6 +11,7 @@ public class Boat : MonoBehaviour {
 	private Transform target;
 	private Transform checkpoints;
 
+	private GameObject hittedGO;
 	private GameObject[] obstacles;
 
 	void Start(){
@@ -24,13 +25,21 @@ public class Boat : MonoBehaviour {
 	void FixedUpdate () {
 
 		obstacles = GameObject.FindGameObjectsWithTag("Rock");
-		Debug.Log(obstacles.Length);
-		Debug.Log(boat.position);
-		for(int i=0; i < obstacles.Length; i++) {
-			Debug.Log(obstacles[i]);
-			Debug.DrawRay(boat.position, obstacles[i].transform.position - boat.position, Color.green, 3);
+		// Debug.Log(obstacles.Length);
+		// Debug.Log(boat.position);
+		// for(int i=0; i < obstacles.Length; i++) {
+		// 	Debug.Log(obstacles[i]);
+		// 	Debug.DrawRay(boat.position, obstacles[i].transform.position - boat.position, Color.green, 3);
+		// }
+
+		RaycastHit hit;
+		if(Physics.Raycast(boat.position, target.position - boat.position , out hit, 100) &&
+			 hit.collider.gameObject.tag == "Rock") {
+			hittedGO = hit.collider.gameObject;
+			Transform hitted = hit.collider.gameObject.transform;
+			Debug.DrawLine (boat.position, hitted.position, Color.blue);
 		}
-		List<Vector3> waypoints = getWaypoints(boat.position, target.position, obstacles);
+		List<Vector3> waypoints = getWaypoints(boat.position, target.position, new GameObject[]{hittedGO});
 		Vector3 nextPos = waypoints[1];
 
 
@@ -73,7 +82,7 @@ public class Boat : MonoBehaviour {
 		}
 
 		Vector3 getWaypointOnCircle(Vector3[] waypoints, Vector2 center, float radius) {
-			float safetyDistance = 1;
+			float safetyDistance = 2;
 
 			Vector2 point1 = toVector2(waypoints[0]);
 			Vector2 point2 = toVector2(waypoints[1]);
@@ -104,7 +113,7 @@ public class Boat : MonoBehaviour {
 
 			for (int i = 0; i < obstacles.Length; i++) {
 				Vector2 center = new Vector2 (obstacles [i].transform.position.x, obstacles [i].transform.position.z);
-				float radius = obstacles [i].GetComponent<SphereCollider> ().radius;
+				float radius = obstacles [i].GetComponent<SphereCollider> ().radius * obstacles[i].transform.localScale.x;
 				Vector3[] circleHits = BetweenLineAndCircle (
 					center,
 					radius,
@@ -112,10 +121,21 @@ public class Boat : MonoBehaviour {
 					toVector2(endPosition));
 
 				if (circleHits.Length == 2) {
-					// if(	(circleHits[0] - startPosition).magnitude < (endPosition - startPosition).magnitude ||
-					// 		(circleHits[1] - startPosition).magnitude < (endPosition - startPosition).magnitude) {
-						waypoints.Add (getWaypointOnCircle (circleHits, center, radius * obstacles[i].transform.localScale.x));
-						break;
+
+
+						Vector3 distance11 = (circleHits[0] - startPosition);
+						Vector3 distance12 = (circleHits[0] - endPosition);
+
+						Vector3 distance21 = (circleHits[1] - startPosition);
+						Vector3 distance22 = (circleHits[1] - endPosition);
+
+						float distance = (endPosition - startPosition).magnitude;
+
+						Debug.Log(obstacles[i].transform.localScale.x);
+						if((distance11 + distance12).magnitude <= distance && (distance21 + distance22).magnitude <= distance) {
+							waypoints.Add (getWaypointOnCircle (circleHits, center, radius));
+							break;
+						}
 					// }
 				}
 
@@ -131,7 +151,7 @@ public class Boat : MonoBehaviour {
 		Vector3 getNearCollisions(Vector3 path, GameObject obstacle) {
 			Vector3 center = obstacle.transform.position;
 			SphereCollider collider = obstacle.GetComponent<SphereCollider>();
-			float radius = collider.radius;
+			float radius = collider.radius + obstacle.transform.localScale.x;
 			return path;
 		}
 
