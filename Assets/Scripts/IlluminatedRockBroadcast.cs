@@ -6,7 +6,6 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 
 
 	Transform light;
-	Transform rock;
 	Transform hitted;
 	float dot;
 
@@ -14,7 +13,6 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		light = GameObject.Find("Luz Giratoria").transform;
-		rock = GameObject.Find("rock").transform;
 	}
 
 	// Update is called once per frame
