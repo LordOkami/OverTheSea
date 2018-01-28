@@ -30,8 +30,12 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
       while (i < boats.Length) {
 				GameObject boat = boats[i].gameObject;
 					if(boat.tag=="Boat"){
-						Debug.DrawRay(boats[i].transform.position, boats[i].transform.forward*4, Color.green);
-	          boat.transform.parent.GetComponent<Boat>().AddRock(hitted);
+						try{
+								Debug.DrawRay(boats[i].transform.position, boats[i].transform.forward*4, Color.green);
+								boat.transform.parent.GetComponent<Boat>().AddRock(hitted);
+		        }catch (System.Exception e)
+		        {}
+
 					}
           i++;
       }

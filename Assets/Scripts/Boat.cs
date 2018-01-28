@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour {
 
-	public float speed = 2f;
-	public float rotationSpeed = 0.002f;
-	public float safetyDistance = 2;
+	public float speed = 3f;
+	public float rotationSpeed = 0.003f;
+	public float safetyDistance = 4f;
 	public List<GameObject> knownRocks;
 
 
@@ -27,18 +27,20 @@ public class Boat : MonoBehaviour {
 	}
 
 	public void AddRock(GameObject rock){
-		for( int i = 0; i < knownRocks.Count; i++){
-			if(GameObject.ReferenceEquals(rock, knownRocks[i])){
-				return;
+		try{
+			for( int i = 0; i < knownRocks.Count; i++){
+				if(GameObject.ReferenceEquals(rock, knownRocks[i])){
+					return;
+				}
 			}
-		}
-		knownRocks.Add(rock);
+			knownRocks.Add(rock);
 
-		exclamation = Instantiate(exclamationPrefab.transform, boat.transform.position + new Vector3(0,3,0), boat.transform.rotation, this.transform);
-    exclamation.transform.localScale = Vector3.one * 0.2f;
-		exclamation.gameObject.SetActive(true);
-		exclamation.GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
-		Destroy(exclamation.gameObject, 1f);
+			exclamation = Instantiate(exclamationPrefab.transform, boat.transform.position + new Vector3(0,3,0), boat.transform.rotation, this.transform);
+	    exclamation.transform.localScale = Vector3.one * 0.2f;
+			exclamation.gameObject.SetActive(true);
+			exclamation.GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
+			Destroy(exclamation.gameObject, 1f);
+		}catch(System.Exception e){};
 	}
 
 	void Update () {
@@ -60,8 +62,7 @@ public class Boat : MonoBehaviour {
 		Vector3 nextPos = waypoints[1];
 
 		if( (boat.position - target.position).magnitude < 1 ){
-			Debug.Log("REMOVING")
-			Destroy(this, 0.5f);
+			Destroy(transform.gameObject, 0.5f);
 		}
 
 		Vector3 relativePos = nextPos - boat.position;
