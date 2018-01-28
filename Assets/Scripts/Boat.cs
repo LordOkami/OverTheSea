@@ -6,6 +6,7 @@ public class Boat : MonoBehaviour {
 
 	public float speed;
 	public float rotationSpeed;
+	public float safetyDistance = 3;
 
 	private Transform boat;
 	private Transform target;
@@ -33,7 +34,7 @@ public class Boat : MonoBehaviour {
 		// }
 
 		RaycastHit hit;
-		if(Physics.Raycast(boat.position, target.position - boat.position , out hit, 100) &&
+		if(Physics.SphereCast(boat.position, safetyDistance, target.position - boat.position , out hit, 100) &&
 			 hit.collider.gameObject.tag == "Rock") {
 			hittedGO = hit.collider.gameObject;
 			Transform hitted = hit.collider.gameObject.transform;
@@ -82,7 +83,7 @@ public class Boat : MonoBehaviour {
 		}
 
 		Vector3 getWaypointOnCircle(Vector3[] waypoints, Vector2 center, float radius) {
-			float safetyDistance = 2;
+
 
 			Vector2 point1 = toVector2(waypoints[0]);
 			Vector2 point2 = toVector2(waypoints[1]);
@@ -113,7 +114,7 @@ public class Boat : MonoBehaviour {
 
 			for (int i = 0; i < obstacles.Length; i++) {
 				Vector2 center = new Vector2 (obstacles [i].transform.position.x, obstacles [i].transform.position.z);
-				float radius = obstacles [i].GetComponent<SphereCollider> ().radius * obstacles[i].transform.localScale.x;
+				float radius = obstacles [i].GetComponent<SphereCollider> ().radius * obstacles[i].transform.localScale.x + safetyDistance;
 				Vector3[] circleHits = BetweenLineAndCircle (
 					center,
 					radius,
