@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4476863690136856}
   - component: {fileID: 95709433203678212}
   - component: {fileID: 135759536305051748}
-  - component: {fileID: 114091314609572626}
   - component: {fileID: 54318546066224694}
+  - component: {fileID: 114091314609572626}
   m_Layer: 0
   m_Name: Barco Lux
   m_TagString: Untagged
@@ -160,7 +160,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &95709433203678212
 Animator:

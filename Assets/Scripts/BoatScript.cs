@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class BoatScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    // C#
+    public Transform prefab;
+    private Transform exclamation;
+    public bool exclamationActive = false;
+
+    // Use this for initialization
+    void Start () {
+        exclamation = Instantiate(prefab, this.transform.position + new Vector3(0,3,0), transform.rotation,this.transform);
+        exclamation.transform.localScale = Vector3.one * 0.2f;
+    }
     
 
     public float speed = 1.5f;
 
     void Update()
     {
-       
-            transform.position += transform.right * speed * Time.deltaTime;
-            //Vector3 localVelocity = transform.InverseTransformDirection(GetComponent<Rigidbody>().velocity);
-        //transform.rotation = Quaternion.LookRotation(localVelocity);
-
+        transform.position += transform.right * speed * Time.deltaTime;
+        exclamation.gameObject.active = false;
 
     }
 
-
-    void OnCollisionEnter(Collision collision)
-    {
-
-    }
 }
