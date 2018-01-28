@@ -110,9 +110,13 @@ public class Boat : MonoBehaviour {
 			Debug.DrawLine (toVector3(normalDirection) + toVector3(center), toVector3(center), Color.yellow);
 
 			Vector2 newWaypoint = toVector2(toVector3(normalDirection) + toVector3(center));
+			direction.Normalize();
+			Vector2 squareWaypoint = ((direction * -1) * radius) + newWaypoint;
 
 			Debug.DrawLine (toVector3(newWaypoint), toVector3(center), Color.magenta);
-			return toVector3 (newWaypoint);
+
+			Debug.DrawLine (toVector3(squareWaypoint), toVector3(center), Color.blue);
+			return toVector3 (squareWaypoint);
 		}
 
 		List<Vector3> getWaypoints(Vector3 startPosition, Vector3 endPosition, GameObject[] obstacles) {
