@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 135759536305051748}
   - component: {fileID: 54318546066224694}
   - component: {fileID: 114091314609572626}
-  - component: {fileID: 114124821495891374}
   m_Layer: 0
   m_Name: Barco Lux
   m_TagString: Untagged
@@ -227,20 +226,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2f9b2fe059e1a4eab833588c33b243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  exclamationActive: 1
+  exclamationPrefab: {fileID: 1333185721060172, guid: b0a3db3e69a3c254b8190284004bd4f9,
+    type: 2}
+  exclamationActive: 0
+  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 2}
   speed: 1.5
---- !u!114 &114124821495891374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1411083924163904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec5ce035d592984da599e3a26f90bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114492744997446602
 MonoBehaviour:
   m_ObjectHideFlags: 1

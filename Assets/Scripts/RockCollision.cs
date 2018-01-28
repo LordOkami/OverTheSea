@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RockCollision : MonoBehaviour {
 
-    public GameObject explosion;
+    
  
     void Start()
     {
@@ -15,14 +15,5 @@ public class RockCollision : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-        GameObject other = collision.gameObject;
-
-        GameObject explosionParticle = Instantiate(explosion, collision.transform.position, Quaternion.identity) as GameObject;
-        explosionParticle.SetActive(true);
-        Destroy(explosionParticle, 3);
-        // Parece ñapa, mirar si se puede borrar de otra forma
-        other.SetActive(false);
-    }
+   
 }

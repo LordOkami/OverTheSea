@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4333248268786552}
   - component: {fileID: 33804661747700944}
   - component: {fileID: 23389975684580140}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4494031085138028}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4770088799352184}
   - component: {fileID: 33772896233418466}
   - component: {fileID: 23785316025060906}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333185721060172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8325775, y: 1.1146421, z: 9.390941}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4333248268786552}
