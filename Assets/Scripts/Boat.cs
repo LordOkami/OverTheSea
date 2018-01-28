@@ -36,11 +36,11 @@ public class Boat : MonoBehaviour {
 		GameObject[] hittedKnown = new GameObject[0];
 		RaycastHit hit;
 		if(Physics.SphereCast(boat.position, safetyDistance, target.position - boat.position , out hit, 100) &&
-			 hit.collider.gameObject.tag == "Rock") {
+			 (hit.collider.gameObject.tag == "Rock" || hit.collider.gameObject.tag == "Boat")  ) {
 			GameObject hitted = hit.collider.gameObject;
 			for( int i = 0; i < knownRocks.Count; i++){
 				if(GameObject.ReferenceEquals(hitted, knownRocks[i])){
-					Debug.DrawLine(boat.position, hitted.transform.position, Color.green, 3);
+					Debug.DrawLine(boat.position, hitted.transform.position, Color.green, 1);
 					hittedKnown = new GameObject[]{hitted};
 				}
 			}
