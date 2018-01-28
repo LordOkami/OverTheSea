@@ -13,6 +13,10 @@ public class Boat : MonoBehaviour {
 	private Transform boat;
 	private Transform target;
 
+
+	public GameObject exclamationPrefab;
+	private Transform exclamation;
+
 	void Start(){
 		GameObject IslaToLoca = GameObject.Find("IslaToLoca");
 		knownRocks = new List<GameObject>();
@@ -29,7 +33,12 @@ public class Boat : MonoBehaviour {
 			}
 		}
 		knownRocks.Add(rock);
-		Debug.Log(knownRocks.Count);
+
+		exclamation = Instantiate(exclamationPrefab.transform, boat.transform.position + new Vector3(0,3,0), boat.transform.rotation, this.transform);
+    exclamation.transform.localScale = Vector3.one * 0.2f;
+		exclamation.gameObject.SetActive(true);
+		exclamation.GetComponent<Rigidbody>().AddForce(Vector3.up * 750);
+		Destroy(exclamation.gameObject, 1f);
 	}
 
 	void Update () {
@@ -40,6 +49,7 @@ public class Boat : MonoBehaviour {
 			GameObject hitted = hit.collider.gameObject;
 			for( int i = 0; i < knownRocks.Count; i++){
 				if(GameObject.ReferenceEquals(hitted, knownRocks[i])){
+
 					Debug.DrawLine(boat.position, hitted.transform.position, Color.green, 1);
 					hittedKnown = new GameObject[]{hitted};
 				}
