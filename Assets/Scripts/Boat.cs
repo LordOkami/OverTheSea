@@ -37,7 +37,7 @@ public class Boat : MonoBehaviour {
 		exclamation = Instantiate(exclamationPrefab.transform, boat.transform.position + new Vector3(0,3,0), boat.transform.rotation, this.transform);
     exclamation.transform.localScale = Vector3.one * 0.2f;
 		exclamation.gameObject.SetActive(true);
-		exclamation.GetComponent<Rigidbody>().AddForce(Vector3.up * 750);
+		exclamation.GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
 		Destroy(exclamation.gameObject, 1f);
 	}
 
@@ -45,7 +45,7 @@ public class Boat : MonoBehaviour {
 		GameObject[] hittedKnown = new GameObject[0];
 		RaycastHit hit;
 		if(Physics.SphereCast(boat.position, safetyDistance, target.position - boat.position , out hit, 100) &&
-			 (hit.collider.gameObject.tag == "Rock" || hit.collider.gameObject.tag == "Boat")  ) {
+			 (hit.collider.gameObject.tag == "Rock" )  ) { //|| hit.collider.gameObject.tag == "Boat")  ) {
 			GameObject hitted = hit.collider.gameObject;
 			for( int i = 0; i < knownRocks.Count; i++){
 				if(GameObject.ReferenceEquals(hitted, knownRocks[i])){
@@ -59,7 +59,10 @@ public class Boat : MonoBehaviour {
 		List<Vector3> waypoints = getWaypoints(boat.position, target.position, hittedKnown);
 		Vector3 nextPos = waypoints[1];
 
-
+		if( (boat.position - target.position).magnitude < 1 ){
+			Debug.Log("REMOVING")
+			Destroy(this, 0.5f);
+		}
 
 		Vector3 relativePos = nextPos - boat.position;
 
