@@ -7,7 +7,10 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 
 	Transform light;
 	Transform rock;
+	Transform hitted;
 	float dot;
+
+	public int rockWarnRadion=12;
 	// Use this for initialization
 	void Start () {
 		light = GameObject.Find("Luz Giratoria").transform;
@@ -18,10 +21,25 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 	void Update () {
 		RaycastHit hit;
     var pos = transform.position;
-    if(Physics.Raycast(light.position, light.forward, out hit, 100)) {
-			Transform hitted = hit.collider.gameObject.transform;
-      Debug.DrawRay(hitted.position, hitted.up*10, Color.green);
-    }
 
+    if(Physics.Raycast(light.position, light.forward, out hit, 100) &&
+				hit.collider.gameObject.tag == "Rock") {
+			hitted = hit.collider.gameObject.transform;
+			Collider[] hitColliders = Physics.OverlapSphere(hitted.position, rockWarnRadion);
+      int i = 0;
+      while (i < hitColliders.Length) {
+          Transform t = hitColliders[i].transform;
+					Debug.DrawRay(t.position, t.forward*5, Color.red);
+          i++;
+      }
+    }
+		else {
+			hitted = null;
+		}
 	}
+	void OnDrawGizmos() {
+		if( hitted != null ){
+			Gizmos.DrawWireSphere(hitted.position, rockWarnRadion);
+		}
+  }
 }
