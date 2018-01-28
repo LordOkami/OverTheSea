@@ -27,20 +27,6 @@ public class BoatScript : MonoBehaviour {
 
     }
 
-     void OnCollisionEnter(Collision collision)
-    { 
-
-        GameObject other = collision.gameObject;
-
-        if (other.tag == "Rock")
-        {
-            GameObject explosionParticle = Instantiate(explosionEffect, this.transform.position, Quaternion.identity) as GameObject;
-            explosionParticle.SetActive(true);
-            Destroy(explosionParticle, 3);
-            // Parece ñapa, mirar si se puede borrar de otra forma
-            this.gameObject.SetActive(false);
-        }
-    
-    }
+   
 
 }
