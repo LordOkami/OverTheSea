@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Instantiate : MonoBehaviour {
+public class Game : MonoBehaviour {
 
     // C#
     public Transform prefab;
