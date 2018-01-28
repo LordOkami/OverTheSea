@@ -9,7 +9,7 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 	GameObject hitted;
 	float dot;
 
-	public int rockWarnRadius=10;
+	public int rockWarnRadius=13;
 	// Use this for initialization
 	void Start () {
 		light = GameObject.Find("Luz Giratoria").transform;

@@ -10,7 +10,8 @@ public class Game : MonoBehaviour {
 
     void Start()
     {
-      Debug.Log("STARTING SPAWNER");
+        Cursor.visible = false;
+        Debug.Log("STARTING SPAWNER");
       InvokeRepeating("SpawnBoat", spawnTime, spawnTime);
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boat : MonoBehaviour {
 
@@ -61,8 +62,14 @@ public class Boat : MonoBehaviour {
 		List<Vector3> waypoints = getWaypoints(boat.position, target.position, hittedKnown);
 		Vector3 nextPos = waypoints[1];
 
-		if( (boat.position - target.position).magnitude < 1 ){
-			Destroy(transform.gameObject, 0.5f);
+		if( (boat.position - target.position).magnitude < 2 ){
+			Destroy(transform.gameObject, 0);
+            Text textobj = GameObject.Find("ScoreValue").GetComponent<Text>();
+
+            textobj.text = (int.Parse(textobj.text) + 10) + "";
+
+
+
 		}
 
 		Vector3 relativePos = nextPos - boat.position;
