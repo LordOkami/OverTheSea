@@ -338,9 +338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   rotationSpeed: 0.002
-  safetyDistance: 0.5
+  safetyDistance: 2
   knownRocks: []
-  exclamationPrefab: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+  exclamationPrefab: {fileID: 1333185721060172, guid: b0a3db3e69a3c254b8190284004bd4f9,
     type: 2}
 --- !u!114 &114904147299021310
 MonoBehaviour:
