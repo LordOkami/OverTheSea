@@ -4649,7 +4649,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.07430707
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54498306041752080, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1181259143 stripped
@@ -4968,7 +4969,8 @@ Prefab:
       propertyPath: m_Name
       value: rock (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54498306041752080, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1390763555
@@ -5192,7 +5194,8 @@ Prefab:
       propertyPath: m_Name
       value: rock (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54498306041752080, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1540322509 stripped
@@ -5637,6 +5640,7 @@ Prefab:
       propertyPath: m_Name
       value: rock (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54498306041752080, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cc8261ca92d3556438de0943ee2a5b42, type: 2}
   m_IsPrefabParent: 0
