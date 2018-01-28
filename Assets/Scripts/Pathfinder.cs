@@ -28,7 +28,7 @@ public class pathfinder : MonoBehaviour {
 
 	Vector3 getNextWaypoint(Vector3 start, Vector3 end, GameObject[] obstacles) {
 		List<Vector3> waypoints = getWaypoints(objectPosition, targetPosition, obstacles);
-		return waypoints[0]
+        return waypoints[0];
 	}
 
 	void drawWaypoints(List<Vector3> waypoints) {
