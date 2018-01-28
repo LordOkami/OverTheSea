@@ -20,10 +20,10 @@ public class Game : MonoBehaviour {
       Debug.Log("spawning");
       float size = 40f;
       Vector3[] randomeVectors = new Vector3[4] {
-        new Vector3(size, 0f, Random.Range(-size, size)),
-        new Vector3(-size, 0f, Random.Range(-size, size)),
-        new Vector3(Random.Range(-size, size), 0f, size),
-        new Vector3(Random.Range(-size, size), 0f, -size)
+        new Vector3(size+15, 0f, Random.Range(-size, size)+15),
+        new Vector3(-size+15, 0f, Random.Range(-size, size)+15),
+        new Vector3(Random.Range(-size, size)+15, 0f, size+15),
+        new Vector3(Random.Range(-size, size)+15, 0f, -size+15)
       };
 
       int firstVector = Random.Range(0, 4);
