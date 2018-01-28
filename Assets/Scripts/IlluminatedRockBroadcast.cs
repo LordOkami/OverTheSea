@@ -31,7 +31,7 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 				GameObject boat = boats[i].gameObject;
 					if(boat.tag=="Boat"){
 						Debug.DrawRay(boats[i].transform.position, boats[i].transform.forward*4, Color.green);
-	          boat.transform.parent.parent.GetComponent<Boat>().AddRock(hitted);
+	          boat.transform.parent.GetComponent<Boat>().AddRock(hitted);
 					}
           i++;
       }

@@ -25,7 +25,7 @@ public class BoatCollisioner : MonoBehaviour {
             explosionParticle.SetActive(true);
             Destroy(explosionParticle, 3);
             // Parece ñapa, mirar si se puede borrar de otra forma
-            this.gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
         }
 
     }
