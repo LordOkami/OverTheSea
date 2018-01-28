@@ -8,7 +8,7 @@ public class BoatScript : MonoBehaviour {
     // C#
     public Transform prefab;
     private Transform exclamation;
-    public bool exclamationActive = false;
+    public bool exclamationActive = true;
 
     // Use this for initialization
     void Start () {
@@ -22,7 +22,7 @@ public class BoatScript : MonoBehaviour {
     void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
-        exclamation.gameObject.active = false;
+        exclamation.gameObject.SetActive(exclamationActive);
 
     }
 
