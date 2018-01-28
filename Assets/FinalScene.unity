@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 321459222}
   - component: {fileID: 321459221}
   - component: {fileID: 321459223}
+  - component: {fileID: 321459224}
   m_Layer: 0
   m_Name: Luz Giratoria
   m_TagString: Untagged
@@ -289,6 +290,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcba4a67b88cb534c99e76fca4522cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &321459224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 321459220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6199751ecc02ff640b26e7629f49e75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 8
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 0
+  NoiseScale: 0.015
+  NoiseIntensity: 1
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400
 --- !u!4 &552599325 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 18a88093cede35c4aa236af82072615e, type: 3}
@@ -305,6 +331,7 @@ GameObject:
   - component: {fileID: 634247297}
   - component: {fileID: 634247296}
   - component: {fileID: 634247300}
+  - component: {fileID: 634247301}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -390,6 +417,19 @@ MonoBehaviour:
   shakeDuration: 0
   shakeAmount: 0.7
   decreaseFactor: 1
+--- !u!114 &634247301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634247295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a15fa37ee8c56429840b712c1a6a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 1
+  DefaultSpotCookie: {fileID: 0}
 --- !u!1 &855511785
 GameObject:
   m_ObjectHideFlags: 0
