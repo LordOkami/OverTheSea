@@ -9,14 +9,14 @@ public class Blink : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
        light = this.GetComponent<Light>();
-        light.intensity = Random.Range(0, 2);
+        light.intensity = Random.Range(0, 3);
 
     }
 
     // Update is called once per frame
     void Update () {
         light.intensity+=0.1F * sign;
-        if (light.intensity > 2)
+        if (light.intensity > 3)
         {
             sign = -1;
         }

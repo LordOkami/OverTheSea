@@ -9,7 +9,7 @@ public class Game : MonoBehaviour {
 
     void Start()
     {
-        for (int y = 0; y < 10; y++)
+        for (int y = 0; y < 15; y++)
         {
 
             Vector2 newPosition = (Vector2.one*10) + Random.insideUnitCircle * 30;
