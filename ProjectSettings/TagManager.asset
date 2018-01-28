@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - Boat
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Faro
   - Boat
-  - 
+  - BoatElement
   - 
   - 
   - 

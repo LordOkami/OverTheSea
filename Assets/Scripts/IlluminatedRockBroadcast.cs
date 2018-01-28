@@ -6,28 +6,33 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 
 
 	Transform light;
-	Transform hitted;
+	GameObject hitted;
 	float dot;
 
-	public int rockWarnRadion=12;
+	public int rockWarnRadius=10;
 	// Use this for initialization
 	void Start () {
 		light = GameObject.Find("Luz Giratoria").transform;
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 		RaycastHit hit;
-    var pos = transform.position;
 
-    if(Physics.Raycast(light.position, light.forward, out hit, 100) &&
-				hit.collider.gameObject.tag == "Rock") {
-			hitted = hit.collider.gameObject.transform;
-			Collider[] hitColliders = Physics.OverlapSphere(hitted.position, rockWarnRadion);
+    if(Physics.Raycast(light.position, light.forward, out hit, 100)
+				&& hit.collider.gameObject.tag == "Rock") {
+			hitted = hit.collider.gameObject;
+			Debug.DrawLine(light.position, hit.collider.transform.position, Color.blue);
+			Collider[] boats = Physics.OverlapSphere(hitted.transform.position, rockWarnRadius);
+
       int i = 0;
-      while (i < hitColliders.Length) {
-          Transform t = hitColliders[i].transform;
-					Debug.DrawRay(t.position, t.forward*5, Color.red);
+      while (i < boats.Length) {
+				GameObject boat = boats[i].gameObject;
+					if(boat.tag=="Boat"){
+						Debug.DrawRay(boats[i].transform.position, boats[i].transform.forward *4, Color.green);
+	          boat.transform.parent.parent.GetComponent<Boat>().AddRock(hitted);
+					}
           i++;
       }
     }
@@ -37,7 +42,7 @@ public class IlluminatedRockBroadcast : MonoBehaviour {
 	}
 	void OnDrawGizmos() {
 		if( hitted != null ){
-			Gizmos.DrawWireSphere(hitted.position, rockWarnRadion);
+			Gizmos.DrawWireSphere(hitted.transform.position, rockWarnRadius);
 		}
   }
 }
