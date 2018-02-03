@@ -1,21 +1,77 @@
 fileFormatVersion: 2
-guid: 18a88093cede35c4aa236af82072615e
-timeCreated: 1517057504
+guid: 6b9057250d19016469367db961e5027b
+timeCreated: 1517683641
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2100000: Standard1
-    2100002: Standard
-    2100004: Standard2
-    2100006: b0b0b0
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Box
+    100002: Cone
+    100004: Cylinder
+    100006: Cylinder1
+    100008: Cylinder2
+    100010: Cylinder3
+    100012: Cylinder4
+    100014: Cylinder5
+    100016: //RootNode
+    100018: Torus
+    100020: Torus1
+    100022: Torus2
+    100024: Torus3
+    400000: Box
+    400002: Cone
+    400004: Cylinder
+    400006: Cylinder1
+    400008: Cylinder2
+    400010: Cylinder3
+    400012: Cylinder4
+    400014: Cylinder5
+    400016: //RootNode
+    400018: Torus
+    400020: Torus1
+    400022: Torus2
+    400024: Torus3
+    2100000: Standard
+    2100002: Standard1
+    2100004: b0b0b0
+    2100006: Standard2
+    2300000: Box
+    2300002: Cone
+    2300004: Cylinder
+    2300006: Cylinder1
+    2300008: Cylinder2
+    2300010: Cylinder3
+    2300012: Cylinder4
+    2300014: Cylinder5
+    2300016: Torus
+    2300018: Torus1
+    2300020: Torus2
+    2300022: Torus3
+    3300000: Box
+    3300002: Cone
+    3300004: Cylinder
+    3300006: Cylinder1
+    3300008: Cylinder2
+    3300010: Cylinder3
+    3300012: Cylinder4
+    3300014: Cylinder5
+    3300016: Torus
+    3300018: Torus1
+    3300020: Torus2
+    3300022: Torus3
+    4300000: Cylinder
+    4300002: Box
+    4300004: Torus3
+    4300006: Cylinder3
+    4300008: Cylinder5
+    4300010: Torus1
+    4300012: Cylinder4
+    4300014: Cone
+    4300016: Torus
+    4300018: Cylinder2
+    4300020: Cylinder1
+    4300022: Torus2
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -90,7 +146,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
